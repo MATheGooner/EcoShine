@@ -1,2 +1,5 @@
 import { Link } from "react-router-dom";
-export default function ServiceCard({ service }) { return <article className="service-card"><p className="eyebrow">{service.eyebrow}</p><h3>{service.name}</h3><p>{service.summary}</p><dl><div><dt>Best for</dt><dd>{service.bestFor}</dd></div><div><dt>Schedule</dt><dd>{service.frequency}</dd></div></dl><p className="service-card__price">{service.pricing}</p><div className="service-card__actions"><Link to={`/services/${service.slug}`}>View service</Link><Link to={`/quote?service=${service.slug}`}>Get a quote <span aria-hidden="true">→</span></Link></div></article>; }
+
+export default function ServiceCard({ service, index }) {
+  return <article className="service-card"><div className="service-card__top"><span aria-hidden="true">0{index}</span><p>{service.eyebrow}</p></div><h3>{service.shortName}</h3><p>{service.summary}</p><div className="service-card__footer"><small>{service.pricing}</small><Link to={`/services/${service.slug}`} aria-label={`Explore ${service.name}`}>Explore service <span aria-hidden="true">↗</span></Link></div></article>;
+}

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { business } from "../../data/business";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -31,5 +30,5 @@ export default function Header() {
     return () => { document.removeEventListener("keydown", keydown); document.removeEventListener("pointerdown", pointerdown); };
   }, [open]);
 
-  return <header className="site-header"><nav className="nav container" aria-label="Primary navigation"><Link className="brand" to="/" aria-label="EcoShine home"><img src="/images/ecoshine-logo.png" width="500" height="500" alt="" /><span>EcoShine</span></Link><button ref={toggleRef} className={`menu-toggle ${open ? "is-open" : ""}`} type="button" aria-expanded={open} aria-controls="primary-menu" aria-label={`${open ? "Close" : "Open"} navigation menu`} onClick={() => setOpen(!open)}><span /><span /><span /></button><div ref={menuRef} id="primary-menu" className={`nav__menu ${open ? "is-open" : ""}`}><NavLink to="/#services">Services</NavLink><NavLink to="/#how-it-works">How it works</NavLink><NavLink to="/#areas">Areas</NavLink><NavLink to="/#faq">FAQ</NavLink><a className="nav__phone" href={`tel:${business.phoneHref}`}>Call {business.phoneDisplay}</a><NavLink className="button button--primary nav__cta" to="/quote">Get a Free Quote</NavLink></div></nav></header>;
+  return <header className="site-header"><nav className="nav container" aria-label="Primary navigation"><Link className="brand" to="/" aria-label="EcoShine home"><img src="/images/ecoshine-logo.png" width="500" height="500" alt="" /><span>EcoShine</span></Link><button ref={toggleRef} className={`menu-toggle ${open ? "is-open" : ""}`} type="button" aria-expanded={open} aria-controls="primary-menu" aria-label={`${open ? "Close" : "Open"} navigation menu`} onClick={() => setOpen(!open)}><span /><span /><span /></button><div ref={menuRef} id="primary-menu" className={`nav__menu ${open ? "is-open" : ""}`}><NavLink to="/#services">Services</NavLink><NavLink to="/#how-it-works">How It Works</NavLink><NavLink to="/#pricing">Pricing</NavLink><NavLink to="/#areas">Areas</NavLink><NavLink to="/#faq">FAQs</NavLink><NavLink className="button button--primary nav__cta" to="/quote">Request a Quote</NavLink></div></nav></header>;
 }
