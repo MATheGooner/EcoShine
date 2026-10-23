@@ -1,0 +1,12 @@
+{
+  "name": "EcoShine Dublin",
+  "short_name": "EcoShine",
+  "description": "Home and small-office cleaning across Dublin.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbf8f1",
+  "theme_color": "#174a3a",
+  "icons": [
+    { "src": "/images/ecoshine-logo.png", "sizes": "500x500", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

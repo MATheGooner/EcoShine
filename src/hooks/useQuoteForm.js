@@ -1,0 +1,4 @@
+import { useReducer } from "react";
+export const initialQuote = { service: "", area: "", propertyType: "", bedrooms: "", bathrooms: "", size: "", businessType: "", frequency: "", date: "", flexible: false, addOns: [], supplies: "", notes: "", name: "", phone: "", email: "", consent: false };
+function reducer(state, action) { if (action.type === "set") return { ...state, [action.field]: action.value }; if (action.type === "toggleAddon") return { ...state, addOns: state.addOns.includes(action.value) ? state.addOns.filter((item) => item !== action.value) : [...state.addOns, action.value] }; return state; }
+export default function useQuoteForm(prefill = "") { const [values, dispatch] = useReducer(reducer, { ...initialQuote, service: prefill }); return { values, setField: (field, value) => dispatch({ type: "set", field, value }), toggleAddon: (value) => dispatch({ type: "toggleAddon", value }) }; }

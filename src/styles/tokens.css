@@ -1,0 +1,7 @@
+:root {
+  --green-950:#0d3027; --green-900:#174a3a; --green-700:#26745a; --green-500:#43a77c;
+  --mint-100:#e6f6ed; --mint-50:#f3fbf7; --cream:#fbf8f1; --white:#fff;
+  --ink:#172a24; --muted:#61716b; --line:#d9e7df; --danger:#a22d2d; --danger-bg:#fff1f0;
+  --shadow-sm:0 12px 30px rgba(13,48,39,.08); --shadow-lg:0 28px 70px rgba(13,48,39,.15);
+  --radius-sm:10px; --radius:18px; --radius-lg:28px; --max:1180px;
+}
